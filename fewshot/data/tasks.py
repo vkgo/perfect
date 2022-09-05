@@ -115,7 +115,7 @@ class BoolQ(AbstractTask):
     metric = [metrics.accuracy]
     
     def load_datasets(self):
-        return load_dataset('super_glue', self.task, script_version="master")
+        return load_dataset('super_glue', self.task) # , script_version="master"
         
 
 class RTE(BoolQ):

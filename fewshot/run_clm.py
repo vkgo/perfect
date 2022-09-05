@@ -66,10 +66,10 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, FewShotTrainingArguments, AdapterArguments))
+    parser = HfArgumentParser((ModelArguments, DataTrainingArguments, FewShotTrainingArguments, AdapterArguments)) # 读取args
     print(sys.argv[1])
     if len(sys.argv) == 2 and sys.argv[1].endswith(".json"):
-        model_args, data_args, training_args, adapter_args = parser.parse_json_file(json_file=os.path.abspath(sys.argv[1]))
+        model_args, data_args, training_args, adapter_args = parser.parse_json_file(json_file=os.path.abspath(sys.argv[1])) # 将json转配置
     else:
         model_args, data_args, training_args, adapter_args = parser.parse_args_into_dataclasses()
    
